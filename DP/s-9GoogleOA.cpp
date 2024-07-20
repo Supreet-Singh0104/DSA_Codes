@@ -7,7 +7,7 @@
 #include <queue>
 #include <stack>
 #include <string>
-
+//Q)https://docs.google.com/document/d/19i4iFDHcQf6xmr_q5ZO9NNoggWOQXoHPgwCxv07MrK4/edit
 using namespace std;
 int dp[100005][3];
 int main() {
