@@ -7,7 +7,7 @@
 #include <queue>
 #include <stack>
 #include <string>
-
+//Q)https://docs.google.com/document/d/13ydHMmLXcvIbpvH-rn-9F3Oc4IiekKu8ItLr05HZRJI/edit
 using namespace std;
 
 int main() {
