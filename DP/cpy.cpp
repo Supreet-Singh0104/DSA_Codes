@@ -32,7 +32,7 @@ int main() {
         for(int i=1;i<=n;i++){
             char sign;
             cin>>sign;
-           // cout<<sign;
+            cout<<sign;
             if(sign=='+'){
                 ll num; cin>>num;
                 dpmax[i]=max(dpmax[i-1]+num,dpmax[i-1],dpmin[i-1]+num);
