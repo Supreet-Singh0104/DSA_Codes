@@ -1,0 +1,1 @@
+{"name":"Local: s-16Barcleys","url":"/Users/supreetsinghchawla/Desktop/DSA_Codes/DP/s-16Barcleys.cpp","tests":[{"id":1722462522754,"input":"4 2\n1 2\n4 10\n20 21\n2 23\n","output":"33\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/supreetsinghchawla/Desktop/DSA_Codes/DP/s-16Barcleys.cpp","group":"local","local":true}
