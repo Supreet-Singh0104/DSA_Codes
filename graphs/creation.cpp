@@ -16,11 +16,11 @@ class Graph{
         l[v].push_back(u);
     }
 
-    void bfs(){
+    void bfsHelper(int st,vector<bool>& vis){
         queue<int> q;
-        vector<bool> vis(V,false);
-        q.push(0);
-        vis[0]=true;
+        
+        q.push(st);
+        vis[st]=true;
 
         while(q.size()>0){
             int u=q.front();// curr vertex
@@ -37,6 +37,16 @@ class Graph{
         }
         cout<<endl;
     }
+    void bfs(){
+        vector<bool> vis(V,false);
+        for(int i=0;i<V;i++){
+            if(!vis[i]){
+                bfsHelper(i,vis);
+                cout<<endl;
+            }
+            
+        }
+    }
 
     void dfsHelper(int u,vector<bool>& vis){
     vis[u]=true;
@@ -51,6 +61,18 @@ class Graph{
     void dfs(){
         vector<bool> vis(V,false);
         dfsHelper(0,vis);
+        cout<<endl;
+    }
+
+    void dfs_Unconnected(){
+        vector<bool> vis(V,false);
+        for(int i=0;i<V;i++){
+            if(!vis[i]){
+                dfsHelper(i,vis); 
+                cout<<endl;
+            }
+        }
+        
         cout<<endl;
     }
 
@@ -83,20 +105,20 @@ class Graph{
 
 
 int main(){
-    Graph graph(7);
+    Graph graph(10);
 
-    graph.addEdge(0,1);
+    graph.addEdge(1,6);
+    graph.addEdge(6,4);
+    graph.addEdge(4,3);
+    graph.addEdge(4,9);
+    graph.addEdge(3,8);
+    graph.addEdge(3,7);
     graph.addEdge(0,2);
-    graph.addEdge(1,3);
-    graph.addEdge(2,4);
-    graph.addEdge(3,4);
-    graph.addEdge(3,5);
-    graph.addEdge(4,5);
-    graph.addEdge(5,6);
+    graph.addEdge(2,5);
     graph.bfs();
-    cout<<endl;
-    graph.dfs();
-    cout<<endl;
-    cout<<graph.haspath(5,9);
+    //cout<<endl;
+   // graph.dfs_Unconnected();
+   // cout<<endl;
+   // cout<<graph.haspath(5,9);
     return 0;
 }
