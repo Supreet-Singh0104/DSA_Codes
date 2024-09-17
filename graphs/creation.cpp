@@ -42,7 +42,7 @@ class Graph{
         for(int i=0;i<V;i++){
             if(!vis[i]){
                 bfsHelper(i,vis);
-                cout<<endl;
+                cout<<endl; 
             }
             
         }
