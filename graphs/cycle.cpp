@@ -86,17 +86,46 @@ class graph{
         return false;
         
     }
+    bool isBipartite(){
+        queue<int> q;
+        vector<bool> vis(V,false);//this can be skipped instead of this color vector can tell that node is visited or not , if it is 0 or 1 in color than it is visited if -1 then u
+        vector<int> color(V,-1);
+        q.push(0);
+        color[0]=0;
+        vis[0]=0;
+        while(q.size()>0){
+            int curr=q.front();
+            q.pop();
+            list<int> neighbours=l[curr];
+
+            for(int v:neighbours){
+                if(!vis[v]){
+                    vis[v]=true;
+                    color[v]=!color[curr];
+                    q.push(v);
+                }else{
+                    if(color[v]==color[curr]){
+                        return false;
+                    }
+                }
+            }
+            
+        }
+        return true;
+    }
 };
 
 int main(){
-    int v=4;
+    int v=5;
     graph g(v,false);
-    g.addEdge(1,0);
+    g.addEdge(0,1);
     g.addEdge(0,2);
     g.addEdge(2,3);
-    g.addEdge(3,0);
+    g.addEdge(1,3);
+    g.addEdge(0,3);
     
-    bool ans=g.cycleDirected();
+    //bool ans=g.cycleDirected();
+    bool ans=g.isBipartite();
     cout<<ans;
     return 0;
 }
